@@ -1,0 +1,38 @@
+resistor R2k 2000
+resistor R1k 1000
+voltageS V89 89
+voltageS V6  6
+currentS C2mA 0.002
+currentS C9mA 0.009
+
+#first node declared will be considered as ground
+Node ground
+Node N1
+Node N2
+Node N3
+Node N4
+Node N5
+Branch BR1k
+Branch BR2k
+Branch BV89
+Branch BV6
+Branch BC2ma
+branch BC9mA
+
+add BR1k R1k
+add BR2k R2k
+add BV89 V89
+add BV6 V6
+add BC2mA c2mA
+add BC9mA C9mA
+
+add N1 ground BR2k
+add N2 ground BR1k
+add N1 N2 BC9mA
+add N3 ground BR1k
+add N4 ground BR1k
+add N4 N3 BV89
+add N5 N1 BR2k
+add N5 N2 BV6
+add N5 N3 BR1k
+add N5 N4 BC2mA

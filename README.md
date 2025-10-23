@@ -1,11 +1,16 @@
 # Circuit-Simulator
-simple circuit simulator that does nodal analysis on DC circuits 
-it supports resistors, voltage sources, current sources.
-inputing a ciruit is done using a simple text file that descirbes the circuit using predefined syntax
-after writing the text file, send its path to the program and it will output each node's voltage
-supports logical error detection (voltage source loop, floating nodes,etc)
+A simple DC circuit simulator that performs nodal analysis on circuits defined in a custom text-based syntax.
+It supports resistors, voltage sources, and current sources, and can automatically detect logical errors such as voltage source loops or floating nodes.
 there are alot of ways this project can be updated in the future such as AC analysis or supporting other components like capactiors, inductors ,etc.
 
+How it works :
+-Write your circuit in a text file using the predefined syntax (see below).
+-Run the program and provide the path to your circuit file.
+The simulator will:
+-Parse your circuit.
+-Build node equations using nodal analysis.
+-Solve them using Gaussian elimination.
+-Display the voltage at each node.
 
 circuit syntax:
 resistor ID VAl (defining a resistor varaiable,the value must be positive)
@@ -21,4 +26,5 @@ add nodeID1 nodeID2 branchID (adding a branch between two nodes, note that if yo
                               pointing to nodeID1)
 identifiers must start with an alphabet and contain only numebrs and alphabets
 the syntax is not case senstive
+the first node you define is considered as the ground node
 you can use # for comments but they should be on a seperate line
